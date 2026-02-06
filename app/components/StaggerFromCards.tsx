@@ -27,11 +27,13 @@ export default function StaggerFromCards() {
       const layout = createLayout(root, { ease: 'outExpo' });
 
       function animateLayout() {
+        const el = rootRef.current;
+        if (!el) return;
         // 토글 전 상태로 stagger 방향 결정: row → column 이면 'last', column → row 이면 'first'
-        const fromLast = root.classList.contains('row');
+        const fromLast = el.classList.contains('row');
         layout.update(
           () => {
-            root.classList.toggle('row');
+            el.classList.toggle('row');
           },
           {
             delay: stagger(50, { from: fromLast ? 'last' : 'first' }),
