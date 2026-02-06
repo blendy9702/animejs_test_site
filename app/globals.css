@@ -135,3 +135,27 @@ body {
 #layout-stagger-from .layout-container.row {
   flex-direction: row;
 }
+
+/* ModalLayoutCards: 다이얼로그 레이아웃 애니메이션 */
+#layout-dialog.layout-dialog {
+  --overlay-alpha: 0;
+  margin: auto;
+  width: 100%;
+  max-width: min(90vw, 400px);
+  padding: 0;
+}
+#layout-dialog.layout-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+#layout-dialog.layout-dialog .item {
+  width: 100%;
+  min-width: unset;
+  box-sizing: border-box;
+  margin: 0;
+}
+/* 카드를 실제로 옮기므로 is-open 숨김 불필요. 플레이스홀더만 비가시 처리 */
+#layout-modal .layout-modal-placeholder {
+  visibility: hidden;
+  pointer-events: none;
+  min-width: 200px;
+}

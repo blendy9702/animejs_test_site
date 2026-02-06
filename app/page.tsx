@@ -1,4 +1,5 @@
 import LayoutCards from './components/LayoutCards';
+import ModalLayoutCards from './components/ModalLayoutCards';
 import StaggerFromCards from './components/StaggerFromCards';
 import ToggleLayoutCards from './components/ToggleLayoutCards';
 
@@ -26,6 +27,14 @@ export default function Home() {
           열→행은 첫 번째 카드부터, 행→열은 마지막 카드부터 순서대로 움직입니다. (ease: outExpo)
         </p>
         <StaggerFromCards />
+
+        <h2 className="mb-2 mt-16 text-lg font-semibold text-zinc-800 dark:text-zinc-200">
+          모달 레이아웃
+        </h2>
+        <p className="mb-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
+          카드를 클릭하면 해당 카드가 모달로 열립니다. data-duration으로 열림 속도가 달라집니다.
+        </p>
+        <ModalLayoutCards />
       </main>
     </div>
   );
